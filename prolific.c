@@ -18,7 +18,7 @@ main(){
 	int randarray[random_num];
 	for(int i = 0; i < random_num; i++){
 		randarray[i] = rand();
-}
+	}
 	for(int i = 0; i < random_num; i++){
 		int forknum;
 		int pid;
@@ -37,14 +37,14 @@ main(){
 			printf("Exiting!\n");
 			sleep(wait);
 			exit(code);
-}
+		}
 		else{
 			waitpid(forknum,&exitcode,0);
 			if(WIFEXITED(exitcode)){
-			printf("Exited with code: %d\n\n\n", WEXITSTATUS(exitcode));
-counter++;		
-wait();
-}
-}
-}
+				printf("Exited with code: %d\n\n\n", WEXITSTATUS(exitcode));
+				counter++;		
+				wait();
+			}
+		}
+	}
 }
