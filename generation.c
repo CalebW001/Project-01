@@ -10,7 +10,7 @@ main(){
     }
     int lifespan = (rand() % 8) + 5;
     int exitcode = -1;
-    printf("Time to mee the kids/grandkids/great grandkids/...\n");
+    printf("Time to meet the kids/grandkids/great grandkids/...\n");
     while(lifespan > 0){
         int ID = fork();
         if(ID == 0){
