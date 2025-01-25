@@ -2,7 +2,9 @@
 # FINAL CHECKPOINT 1 PUSH COMPLETED ON 1/24/2025
 # AUTHORS: NATHANIEL POWERS & CALEB WARZOCHA
 #
-# Compilation guide: 
+# Makefile has not been implemented to use "make all" command yet; waiting to have all sections done to make one main function
+#
+# Current Compilation guide: 
 # "make" - compiles the first section including prolific.c
 #
 # "make prolific" - compiles the first section including prolific.c
