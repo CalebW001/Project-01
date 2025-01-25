@@ -1,0 +1,130 @@
+Script started on 2025-01-24 20:44:06-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="141" LINES="33"]
+student@csvm-ay2024-2025-arm64:~/Project-01$ make
+gcc -o generation generation.c
+generation.c:5:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
+    5 | main(){
+      | ^~~~
+generation.c: In function ‘main’:
+generation.c:9:15: warning: passing argument 1 of ‘srand’ makes integer from pointer without a cast [-Wint-conversion]
+    9 |		srand(current_seed);
+      |		      ^~~~~~~~~~~~
+      |		      |
+      |		      char *
+In file included from generation.c:2:
+/usr/include/stdlib.h:456:33: note: expected ‘unsigned int’ but argument is of type ‘char *’
+  456 | extern void srand (unsigned int __seed) __THROW;
+      |			   ~~~~~~~~~~~~~^~~~~~
+generation.c:20:13: warning: implicit declaration of function ‘waitpid’ [-Wimplicit-function-declaration]
+   20 |		    waitpid(ID, &exitcode, 0);
+      |		    ^~~~~~~
+gcc -o prolific prolific.c
+prolific.c:6:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
+    6 | main(){
+      | ^~~~
+prolific.c: In function ‘main’:
+prolific.c:42:25: warning: implicit declaration of function ‘waitpid’ [-Wimplicit-function-declaration]
+   42 |				waitpid(forknum,&exitcode,0);
+      |				^~~~~~~
+prolific.c:46:33: warning: implicit declaration of function ‘wait’ [-Wimplicit-function-declaration]
+   46 |					wait();
+      |					^~~~
+student@csvm-ay2024-2025-arm64:~/Project-01$ ./prolificon
+Child Number: 0
+PID: 2125  Waits: 3  Code: 22
+Exiting!
+Exited with code: 22
+
+
+Child Number: 1
+PID: 2126  Waits: 3  Code: 24
+Exiting!
+Exited with code: 24
+
+
+Child Number: 2
+PID: 2127  Waits: 2  Code: 2
+Exiting!
+Exited with code: 2
+
+
+Child Number: 3
+PID: 2128  Waits: 1  Code: 22
+Exiting!
+Exited with code: 22
+
+
+Child Number: 4
+PID: 2129  Waits: 1  Code: 5
+Exiting!
+Exited with code: 5
+
+
+Child Number: 5
+PID: 2130  Waits: 3  Code: 38
+Exiting!
+Exited with code: 38
+
+
+Child Number: 6
+PID: 2131  Waits: 2  Code: 3
+Exiting!
+Exited with code: 3
+
+
+Child Number: 7
+PID: 2132  Waits: 2  Code: 29
+Exiting!
+Exited with code: 29
+
+
+Child Number: 8
+PID: 2133  Waits: 1  Code: 29
+Exiting!
+Exited with code: 29
+
+
+Child Number: 9
+PID: 2134  Waits: 3  Code: 28
+Exiting!
+Exited with code: 28
+
+
+Child Number: 10
+PID: 2136  Waits: 1  Code: 48
+Exiting!
+Exited with code: 48
+
+
+student@csvm-ay2024-2025-arm64:~/Project-01$ ./generation
+Time to meet the kids/grandkids/great grandkids/...
+[Parent, PID: 2139]: I am waiting for PID 2140 to finish.
+[Child, PID: 2140]: I was called with descendant count=9. I'll have 8 descendant(s).
+[Parent, PID: 2140]: I am waiting for PID 2141 to finish.
+[Child, PID: 2141]: I was called with descendant count=8. I'll have 7 descendant(s).
+[Child, PID: 2142]: I was called with descendant count=7. I'll have 6 descendant(s).
+[Parent, PID: 2141]: I am waiting for PID 2142 to finish.
+[Parent, PID: 2142]: I am waiting for PID 2143 to finish.
+[Child, PID: 2143]: I was called with descendant count=6. I'll have 5 descendant(s).
+[Child, PID: 2144]: I was called with descendant count=5. I'll have 4 descendant(s).
+[Parent, PID: 2143]: I am waiting for PID 2144 to finish.
+[Parent, PID: 2144]: I am waiting for PID 2145 to finish.
+[Child, PID: 2145]: I was called with descendant count=4. I'll have 3 descendant(s).
+[Parent, PID: 2145]: I am waiting for PID 2146 to finish.
+[Child, PID: 2146]: I was called with descendant count=3. I'll have 2 descendant(s).
+[Parent, PID: 2146]: I am waiting for PID 2147 to finish.
+[Child, PID: 2147]: I was called with descendant count=2. I'll have 1 descendant(s).
+[Parent, PID: 2147]: I am waiting for PID 2148 to finish.
+[Child, PID: 2148]: I was called with descendant count=1. I'll have 0 descendant(s).
+[Parent, PID: 2147]: Child 2148 finished with status code 0. It's now my turn to exit.
+[Parent, PID: 2146]: Child 2147 finished with status code 1. It's now my turn to exit.
+[Parent, PID: 2145]: Child 2146 finished with status code 2. It's now my turn to exit.
+[Parent, PID: 2144]: Child 2145 finished with status code 3. It's now my turn to exit.
+[Parent, PID: 2143]: Child 2144 finished with status code 4. It's now my turn to exit.
+[Parent, PID: 2142]: Child 2143 finished with status code 5. It's now my turn to exit.
+[Parent, PID: 2141]: Child 2142 finished with status code 6. It's now my turn to exit.
+[Parent, PID: 2140]: Child 2141 finished with status code 7. It's now my turn to exit.
+[Parent, PID: 2139]: Child 2140 finished with status code 8. It's now my turn to exit.
+student@csvm-ay2024-2025-arm64:~/Project-01$ exit
+exit
+
+Script done on 2025-01-24 20:47:30-05:00 [COMMAND_EXIT_CODE="9"]
