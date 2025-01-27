@@ -8,8 +8,10 @@
 #
 # "make prolific" - compiles the first section including prolific.c
 #
-# "make generation" - compliles the second section including generation.c
+# "make generation" - compliles the second section including generation.
 #
-# "make clean" - force-removes generation and prolific files from directory
+# "make explorer" - compiles the third section including explorer.c
+#
+# "make clean" - force-removes all section files from directory
 #
 # Once compiled, prolific.c and generation.c may be ran through the executibles "./prolific" and "./generation" respectively 
