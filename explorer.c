@@ -17,16 +17,15 @@ main(){
     //locals
     int currentID;
     char directories[6][10] = {"/home", "/proc", "/proc/sys", "/usr", "/usr/bin", "/bin"};
-    char selection[50];
-    char directory[50];
+    char directory[1024];
     int exitcode;
 
     printf("It's time to see the world/file system!\n");
     for(int i = 0; i < 5; i++){
 
-        *selection = directories[rand() % 6]; //randomly select file path using rand()
+        char* selection = directories[rand() % 6]; //randomly select file path using rand()
         chdir(selection); //change file path to the randomly selected one
-        *directory = cwd(); //capture current working directory
+        getcwd(directory, sizeof(directory)); //capture current working directory
         printf("Selection #%d: %s", i+1, selection);
 
         //check if the change in directory worked
@@ -36,28 +35,31 @@ main(){
             printf(" [FAILURE]\n");
         }
 
-        printf("Current reported directory: %s", directory);
+        printf("Current reported directory: %s\n", directory);
 
         currentID = fork();
-        
+        //process handling
         if(currentID == 0){ //child process
-            printf("[Child, PID: %d]: Executing 'ls -tr' command...", getpid());
+        
+            printf("[Child, PID: %d]: Executing 'ls -tr' command...\n", getpid());
             char* argv[] = {"ls", "-tr", NULL};
+
             if(execvp("ls", argv) == -1){
                 exit(-1);//exits with status -1 if command fails
             }
             exit(0); //exits with status 0 if command runs correctly
             
         } else { //parent process
+
             printf("[Parent]: I am waiting for PID %d to finish.\n", currentID);
             waitpid(currentID, &exitcode, 0); //wait for child to finish and collect exit code
 
             exitcode = WEXITSTATUS(exitcode); //decode manual exit code
             if(exitcode != 0){//if child status is not 0 then it failed, and parent exits
-                printf("[Parent]: Child %d failed with status code %d. Exiting.", currentID, exitcode);
+                printf("[Parent]: Child %d failed with status code %d. Exiting.\n", currentID, exitcode);
                 exit(0);
             }
-            printf("[Parent]: Child %d finished with status code %d. Onward!", currentID, exitcode);
+            printf("[Parent]: Child %d finished with status code %d. Onward!\n", currentID, exitcode);
         }
 
     }
