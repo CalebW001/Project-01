@@ -6,5 +6,5 @@ prolific: prolific.c
 explorer: explorer.c 
 	gcc -o explorer explorer.c
 clean: 
-	rm -f prolific generation
+	rm -f prolific generation explorer
 
