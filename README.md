@@ -14,4 +14,9 @@
 #
 # "make clean" - force-removes all section files from directory
 #
-# Once compiled, prolific.c and generation.c may be ran through the executibles "./prolific" and "./generation" respectively 
+# Once compiled, prolific.c and generation.c may be ran through the executibles "./prolific" and "./generation" respectively
+#
+#
+# Prolific Design Scenario: You need to generate random numbers before forking in order to generate the random number of children created.
+#
+# Slug Design Scenario: The slugs need to utilize different seeds, as if they did not they would all behave identically.
