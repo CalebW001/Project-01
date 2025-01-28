@@ -25,8 +25,8 @@ fptr = fopen("seed_slug_4.txt", "r");
 char string[100];
 fgets(string,100,fptr);
 int seed = atoi(string);
-//srand(seed); //real srand
-srand(12345); //test srand
+srand(seed); //real srand
+//srand(12345); //test srand
 
 int seconds = (rand() % (max_time - min_time + 1)) + min_time;
 printf("Waiting for: %d\n", seconds);

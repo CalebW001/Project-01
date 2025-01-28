@@ -25,3 +25,5 @@
 # The Explorer Design Scenario: If "The Explorer" produced incorrect directory listings, then one could have a check to see if the randomly selected directory is the same as the current working directory, and print both to the output as well to see the discrepency. (This is actually done in the currently working code in this project file)
 #
 # Slug Design Scenario: The slugs need to utilize different seeds, as if they did not they would all behave identically.
+#
+# Slug Race Design Scenario: One thing I might add to the slug race for a real scenario is measuring the time as precisely as possible which is what I've done, using # miliseconds rather than just seconds. Another thing I might do is Reprint the race results and times at the end and say what cmd each slug ran, as the way it is the # times can get lost in the return message.
