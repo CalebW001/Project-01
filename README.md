@@ -16,7 +16,12 @@
 #
 # Once compiled, prolific.c and generation.c may be ran through the executibles "./prolific" and "./generation" respectively
 #
+# Design Scenarios:
 #
 # Prolific Design Scenario: You need to generate random numbers before forking in order to generate the random number of children created.
+# 
+# Generation Design Scenario: If each child process didn't wait until their descendants return and exit, then the child processes would likely become orphaned. These types of child processes without a parent process are known has zombie processes, and would need to be cleaned up by the OS, or simply be left running.
+#
+# The Explorer Design Scenario: If "The Explorer" produced incorrect directory listings, then one could have a check to see if the randomly selected directory is the same as the current working directory, and print both to the output as well to see the discrepency. (This is actually done in the currently working code in this project file)
 #
 # Slug Design Scenario: The slugs need to utilize different seeds, as if they did not they would all behave identically.
