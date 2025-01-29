@@ -1,130 +1,874 @@
-Script started on 2025-01-24 20:44:06-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="141" LINES="33"]
-student@csvm-ay2024-2025-arm64:~/Project-01$ make
-gcc -o generation generation.c
-generation.c:5:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
-    5 | main(){
-      | ^~~~
-generation.c: In function ‘main’:
-generation.c:9:15: warning: passing argument 1 of ‘srand’ makes integer from pointer without a cast [-Wint-conversion]
-    9 |		srand(current_seed);
-      |		      ^~~~~~~~~~~~
-      |		      |
-      |		      char *
-In file included from generation.c:2:
-/usr/include/stdlib.h:456:33: note: expected ‘unsigned int’ but argument is of type ‘char *’
-  456 | extern void srand (unsigned int __seed) __THROW;
-      |			   ~~~~~~~~~~~~~^~~~~~
-generation.c:20:13: warning: implicit declaration of function ‘waitpid’ [-Wimplicit-function-declaration]
-   20 |		    waitpid(ID, &exitcode, 0);
-      |		    ^~~~~~~
-gcc -o prolific prolific.c
-prolific.c:6:1: warning: return type defaults to ‘int’ [-Wimplicit-int]
-    6 | main(){
-      | ^~~~
-prolific.c: In function ‘main’:
-prolific.c:42:25: warning: implicit declaration of function ‘waitpid’ [-Wimplicit-function-declaration]
-   42 |				waitpid(forknum,&exitcode,0);
-      |				^~~~~~~
-prolific.c:46:33: warning: implicit declaration of function ‘wait’ [-Wimplicit-function-declaration]
-   46 |					wait();
-      |					^~~~
-student@csvm-ay2024-2025-arm64:~/Project-01$ ./prolificon
-Child Number: 0
-PID: 2125  Waits: 3  Code: 22
+Script started on 2025-01-28 20:21:31-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="187" LINES="18"]
+[?2004h]0;student@csvm-ay2024-2025-v3: ~/Operating Systems/Project 01/Project-01[01;32mstudent@csvm-ay2024-2025-v3[00m:[01;34m~/Operating Systems/Project 01/Project-01[00m$ ./prolific
+[?2004lChild Number: 0
+PID: 19806  Waits: 3  Code: 22
 Exiting!
 Exited with code: 22
 
 
 Child Number: 1
-PID: 2126  Waits: 3  Code: 24
+PID: 19831  Waits: 3  Code: 24
 Exiting!
 Exited with code: 24
 
 
 Child Number: 2
-PID: 2127  Waits: 2  Code: 2
+PID: 19845  Waits: 2  Code: 2
 Exiting!
 Exited with code: 2
 
 
 Child Number: 3
-PID: 2128  Waits: 1  Code: 22
+PID: 19856  Waits: 1  Code: 22
 Exiting!
 Exited with code: 22
 
 
 Child Number: 4
-PID: 2129  Waits: 1  Code: 5
+PID: 19858  Waits: 1  Code: 5
 Exiting!
 Exited with code: 5
 
 
 Child Number: 5
-PID: 2130  Waits: 3  Code: 38
+PID: 19859  Waits: 3  Code: 38
 Exiting!
 Exited with code: 38
 
 
 Child Number: 6
-PID: 2131  Waits: 2  Code: 3
+PID: 19884  Waits: 2  Code: 3
 Exiting!
 Exited with code: 3
 
 
 Child Number: 7
-PID: 2132  Waits: 2  Code: 29
+PID: 19885  Waits: 2  Code: 29
 Exiting!
 Exited with code: 29
 
 
 Child Number: 8
-PID: 2133  Waits: 1  Code: 29
+PID: 19910  Waits: 1  Code: 29
 Exiting!
 Exited with code: 29
 
 
 Child Number: 9
-PID: 2134  Waits: 3  Code: 28
+PID: 19912  Waits: 3  Code: 28
 Exiting!
 Exited with code: 28
 
 
 Child Number: 10
-PID: 2136  Waits: 1  Code: 48
+PID: 19928  Waits: 1  Code: 48
 Exiting!
 Exited with code: 48
 
 
-student@csvm-ay2024-2025-arm64:~/Project-01$ ./generation
-Time to meet the kids/grandkids/great grandkids/...
-[Parent, PID: 2139]: I am waiting for PID 2140 to finish.
-[Child, PID: 2140]: I was called with descendant count=9. I'll have 8 descendant(s).
-[Parent, PID: 2140]: I am waiting for PID 2141 to finish.
-[Child, PID: 2141]: I was called with descendant count=8. I'll have 7 descendant(s).
-[Child, PID: 2142]: I was called with descendant count=7. I'll have 6 descendant(s).
-[Parent, PID: 2141]: I am waiting for PID 2142 to finish.
-[Parent, PID: 2142]: I am waiting for PID 2143 to finish.
-[Child, PID: 2143]: I was called with descendant count=6. I'll have 5 descendant(s).
-[Child, PID: 2144]: I was called with descendant count=5. I'll have 4 descendant(s).
-[Parent, PID: 2143]: I am waiting for PID 2144 to finish.
-[Parent, PID: 2144]: I am waiting for PID 2145 to finish.
-[Child, PID: 2145]: I was called with descendant count=4. I'll have 3 descendant(s).
-[Parent, PID: 2145]: I am waiting for PID 2146 to finish.
-[Child, PID: 2146]: I was called with descendant count=3. I'll have 2 descendant(s).
-[Parent, PID: 2146]: I am waiting for PID 2147 to finish.
-[Child, PID: 2147]: I was called with descendant count=2. I'll have 1 descendant(s).
-[Parent, PID: 2147]: I am waiting for PID 2148 to finish.
-[Child, PID: 2148]: I was called with descendant count=1. I'll have 0 descendant(s).
-[Parent, PID: 2147]: Child 2148 finished with status code 0. It's now my turn to exit.
-[Parent, PID: 2146]: Child 2147 finished with status code 1. It's now my turn to exit.
-[Parent, PID: 2145]: Child 2146 finished with status code 2. It's now my turn to exit.
-[Parent, PID: 2144]: Child 2145 finished with status code 3. It's now my turn to exit.
-[Parent, PID: 2143]: Child 2144 finished with status code 4. It's now my turn to exit.
-[Parent, PID: 2142]: Child 2143 finished with status code 5. It's now my turn to exit.
-[Parent, PID: 2141]: Child 2142 finished with status code 6. It's now my turn to exit.
-[Parent, PID: 2140]: Child 2141 finished with status code 7. It's now my turn to exit.
-[Parent, PID: 2139]: Child 2140 finished with status code 8. It's now my turn to exit.
-student@csvm-ay2024-2025-arm64:~/Project-01$ exit
-exit
+[?2004h]0;student@csvm-ay2024-2025-v3: ~/Operating Systems/Project 01/Project-01[01;32mstudent@csvm-ay2024-2025-v3[00m:[01;34m~/Operating Systems/Project 01/Project-01[00m$ ./generation
+[?2004lTime to meet the kids/grandkids/great grandkids/...
+[Parent, PID: 20022]: I am waiting for PID 20023 to finish.
+[Child, PID: 20023]: I was called with descendant count=9. I'll have 8 descendant(s).
+[Parent, PID: 20023]: I am waiting for PID 20024 to finish.
+[Child, PID: 20024]: I was called with descendant count=8. I'll have 7 descendant(s).
+[Parent, PID: 20024]: I am waiting for PID 20025 to finish.
+[Child, PID: 20025]: I was called with descendant count=7. I'll have 6 descendant(s).
+[Parent, PID: 20025]: I am waiting for PID 20026 to finish.
+[Child, PID: 20026]: I was called with descendant count=6. I'll have 5 descendant(s).
+[Parent, PID: 20026]: I am waiting for PID 20027 to finish.
+[Child, PID: 20027]: I was called with descendant count=5. I'll have 4 descendant(s).
+[Parent, PID: 20027]: I am waiting for PID 20028 to finish.
+[Child, PID: 20028]: I was called with descendant count=4. I'll have 3 descendant(s).
+[Parent, PID: 20028]: I am waiting for PID 20029 to finish.
+[Child, PID: 20029]: I was called with descendant count=3. I'll have 2 descendant(s).
+[Parent, PID: 20029]: I am waiting for PID 20030 to finish.
+[Child, PID: 20030]: I was called with descendant count=2. I'll have 1 descendant(s).
+[Parent, PID: 20030]: I am waiting for PID 20031 to finish.
+[Child, PID: 20031]: I was called with descendant count=1. I'll have 0 descendant(s).
+[Parent, PID: 20030]: Child 20031 finished with status code 0. It's now my turn to exit.
+[Parent, PID: 20029]: Child 20030 finished with status code 1. It's now my turn to exit.
+[Parent, PID: 20028]: Child 20029 finished with status code 2. It's now my turn to exit.
+[Parent, PID: 20027]: Child 20028 finished with status code 3. It's now my turn to exit.
+[Parent, PID: 20026]: Child 20027 finished with status code 4. It's now my turn to exit.
+[Parent, PID: 20025]: Child 20026 finished with status code 5. It's now my turn to exit.
+[Parent, PID: 20024]: Child 20025 finished with status code 6. It's now my turn to exit.
+[Parent, PID: 20023]: Child 20024 finished with status code 7. It's now my turn to exit.
+[Parent, PID: 20022]: Child 20023 finished with status code 8. It's now my turn to exit.
+[?2004h]0;student@csvm-ay2024-2025-v3: ~/Operating Systems/Project 01/Project-01[01;32mstudent@csvm-ay2024-2025-v3[00m:[01;34m~/Operating Systems/Project 01/Project-01[00m$ ./explorer
+[?2004lRead seed value (converted to integer): 12345
+It's time to see the world/file system!
+Selection #1: /usr [SUCCESS]
+Current reported directory: /usr
+[Parent]: I am waiting for PID 20128 to finish.
+[Child, PID: 20128]: Executing 'ls -tr' command...
+local  lib64  games  libexec  lib32  libx32  src  sbin	include  lib  share  bin
+[Parent]: Child 20128 finished with status code 0. Onward!
+Selection #2: /bin [FAILURE]
+Current reported directory: /usr/bin
+[Parent]: I am waiting for PID 20129 to finish.
+[Child, PID: 20129]: Executing 'ls -tr' command...
+ laptop-detect			    lnstat				 grub-mkfont			  runcon			    X
+ lspgpot			    ip					 grub-menulst2cfg		  rmdir				    gtf
+ dh_installxmlcatalogs		    inputattach				 grub-kbdcomp			  rm				    pip3.10
+ lsb_release			    kerneloops-submit			 grub-glue-efi			  realpath			    pip3
+ xiccd				    transicc				 grub-fstest			  readlink			    pip
+ xcape				    tificc				 grub-file			  pwd				    ps2txt
+ rjoe				    psicc				 grub-editenv			  ptx				    ps2ps2
+ jstar				    linkicc				 check-language-support		  printf			    ps2ps
+ jpico				    jpgicc				 nping				  printenv			    ps2pdfwr
+ joe				    paperconf				 nmap				  pr				    ps2pdf14
+ jmacs				    zstdless				 zjsdecode			  pinky				    ps2pdf13
+ m17n-db			    zstdgrep				 xqxdecode			  pathchk			    ps2pdf12
+ rgrep				    zstd				 usb_printerid			  paste				    ps2pdf
+ syndaemon			    pzstd				 slxdecode			  od				    ps2epsi
+ synclient			    lsof				 qpdldecode			  numfmt			    ps2ascii
+ dh_perl_openssl		    netstat				 printer-profile		  nproc				    printafm
+ ucfr				    telnet.netkit			 opldecode			  nohup				    pphs
+ ucfq				    trust				 oakdecode			  nl				    pfbtopfa
+ ucf				    p11-kit				 lavadecode			  nice				    pf2afm
+ lcf				    patch				 hipercdecode			  mv				    pdf2ps
+ linux-update-symlinks		    pnm2ppa				 hbpldecode			  mktemp			    pdf2dsc
+ linux-check-removal		    calibrate_ppa			 gipddecode			  mknod				    gsnd
+ chromium-browser		    lshw				 foo2zjs-wrapper		  mkfifo			    gslp
+ synaptic-pkexec		    m2400w				 foo2zjs-pstops			  mkdir				    gslj
+ c99-gcc			    m2300w-wrapper			 foo2zjs			  md5sum			    gsdj500
+ c89-gcc			    m2300w				 foo2xqx-wrapper		  ls				    gsdj
+ ssh-import-id-lp		    min12xxw				 foo2xqx			  logname			    gsbj
+ ssh-import-id-gh		    esc-m				 foo2slx-wrapper		  ln				    gs
+ xfconf-query			    msexpand				 foo2slx			  link				    ghostscript
+ xfdesktop-settings		    mscompress				 foo2qpdl-wrapper		  join				    eps2eps
+ xfdesktop			    pstree				 foo2qpdl			  install			    dvipdf
+ xfce4-terminal.wrapper		    pslog				 foo2oak-wrapper		  id				    pkmon
+ xfce4-terminal			    prtstat				 foo2oak			  hostid			    pkcon
+ xfce4-power-manager-settings	    peekfd				 foo2lava-wrapper		  head				    gsettings
+ xfce4-power-manager		    killall				 foo2lava			  groups			    gresource
+ thunar-volman-settings		    fuser				 foo2hp2600-wrapper		  fold				    glib-compile-schemas
+ thunar-volman			    pinentry-gtk-2			 foo2hp				  fmt				    gio-querymodules
+ xfce4-screensaver-preferences	    pinentry-gnome3			 foo2hiperc-wrapper		  false				    gio
+ xfce4-screensaver-configure	    libwacom-update-db			 foo2hiperc			  factor			    gdbus
+ xfce4-screensaver-command	    sed					 foo2hbpl2-wrapper		  expr				    gapplication
+ xfce4-screensaver		    ijs_pxljr				 foo2hbpl2			  expand			    php8.1
+ xfwm4-workspace-settings	    airscan-discover			 foo2ddst-wrapper		  env				    phar.phar8.1
+ xfwm4-tweaks-settings		    time				 foo2ddst			  echo				    phar8.1.phar
+ xfwm4-settings			    usbreset				 ddstdecode			  du				    phar8.1
+ xfwm4				    usbhid-dump				 arm2hpdl			  dirname			    thunderbird
+ xfce4-appfinder		    usb-devices				 sudoreplay			  dircolors			    gst-typefind-1.0
+ ssh-import-id			    lsusb				 sudo				  dir				    gst-tester-1.0
+ strace-log-merge		    xwud				 cvtsudoers			  df				    gst-stats-1.0
+ xflock4			    xwd					 x86_64-linux-gnu-lto-dump-12	  dd				    gst-launch-1.0
+ xfce4-session-settings		    xsm					 x86_64-linux-gnu-gcov-tool-12	  date				    gst-inspect-1.0
+ xfce4-session-logout		    xmore				 x86_64-linux-gnu-gcov-dump-12	  cut				    x86_energy_perf_policy
+ xfce4-session			    xman				 x86_64-linux-gnu-gcov-12	  csplit			    usbipd
+ startxfce4			    xmag				 x86_64-linux-gnu-gcc-ranlib-12   cp				    usbip
+ aptitude-run-state-bundle	    xlogo				 x86_64-linux-gnu-gcc-nm-12	  comm				    turbostat
+ aptitude-curses		    xload				 x86_64-linux-gnu-gcc-ar-12	  cksum				    perf
+ aptitude-create-state-bundle	    xgc					 x86_64-linux-gnu-gcc-12	  chown				    cpupower
+ aptitude-changelog-parser	    xeyes				 x86_64-linux-gnu-cpp-12	  chmod				    acpidbg
+ linux-version			    xedit				 lto-dump-12			  chgrp				    git-upload-pack
+ os-prober			    xditview				 gcov-tool-12			  chcon				    git-upload-archive
+ linux-boot-prober		    xcutsel				 gcov-dump-12			  cat				    git-shell
+ efibootmgr			    xcursorgen				 gcov-12			  basenc			    git-receive-pack
+ efibootdump			    xconsole				 gcc-ranlib-12			  basename			    git
+ x86_64-linux-gnu-gcov-tool	    xclock				 gcc-nm-12			  base64			    pdfunite
+ x86_64-linux-gnu-gcov-dump	    xclipboard				 gcc-ar-12			  base32			    pdftotext
+ x86_64-linux-gnu-gcov		    xcalc				 gcc-12				  b2sum				    pdftops
+ x86_64-linux-gnu-gcc-ranlib	    xbiff				 cpp-12				  arch				    pdftoppm
+ x86_64-linux-gnu-gcc-nm	    x11perfcomp				 x86_64-linux-gnu-lto-dump-11	 '['				    pdftohtml
+ x86_64-linux-gnu-gcc-ar	    x11perf				 x86_64-linux-gnu-gcov-tool-11	  tcpdump			    pdftocairo
+ x86_64-linux-gnu-gcc		    transset				 x86_64-linux-gnu-gcov-dump-11	  start-pulseaudio-x11		    pdfsig
+ x86_64-linux-gnu-g++		    smproxy				 x86_64-linux-gnu-gcov-11	  pulseaudio			    pdfseparate
+ gcov-tool			    rstartd				 x86_64-linux-gnu-gcc-ranlib-11   pax11publish			    pdfinfo
+ gcov-dump			    rstart				 x86_64-linux-gnu-gcc-nm-11	  pasuspender			    pdfimages
+ gcov				    rendercheck				 x86_64-linux-gnu-gcc-ar-11	  padsp				    pdffonts
+ gcc-ranlib			    oclock				 x86_64-linux-gnu-gcc-11	  pactl				    pdfdetach
+ gcc-nm				    ico					 x86_64-linux-gnu-g++-11	  pacmd				    pdfattach
+ gcc-ar				    bmtoa				 x86_64-linux-gnu-cpp-11	  pacat				    X11
+ gcc				    bitmap				 lto-dump-11			  update-alternatives		    Thunar
+ g++				    atobm				 gcov-tool-11			  dpkg-vendor			    POST
+ xfce4-popup-windowmenu		    xkbwatch				 gcov-dump-11			  dpkg-trigger			    HEAD
+ xfce4-popup-directorymenu	    xkbvleds				 gcov-11			  dpkg-statoverride		    GET
+ xfce4-popup-applicationsmenu	    xkbprint				 gcc-ranlib-11			  dpkg-split			    apt-add-repository
+ xfce4-panel			    xkbevd				 gcc-nm-11			  dpkg-source			    apropos
+ xfce4-screenshooter		    xkbcomp				 gcc-ar-11			  dpkg-shlibdeps		    arecord
+ kmod				    xkbbell				 gcc-11				  dpkg-scansources		    awk
+ perldoc			    setxkbmap				 g++-11				  dpkg-scanpackages		    browse
+ pavucontrol			    xwininfo				 tset				  dpkg-realpath			    charmap
+ setfacl			    xvinfo				 tput				  dpkg-query			    captoinfo
+ getfacl			    xprop				 toe				  dpkg-parsechangelog		    bzless
+ chacl				    xmessage				 tic				  dpkg-name			    bzfgrep
+ sensible-pager			    xlsfonts				 tabs				  dpkg-mergechangelogs		    bzegrep
+ sensible-editor		    xlsclients				 infocmp			  dpkg-maintscript-helper	    bzcmp
+ sensible-browser		    xlsatoms				 clear				  dpkg-gensymbols		    compose
+ select-editor			    xkill				 fwupdtool			  dpkg-gencontrol		    cpp-11
+ setpci				    xfontsel				 fwupdmgr			  dpkg-genchanges		    cpp
+ lspci				    xfd					 fwupdate			  dpkg-genbuildinfo		    ctstat
+ python				    xev					 dfu-tool			  dpkg-divert			    desktop-file-edit
+ dm-tool			    xdriinfo				 dbxtool			  dpkg-distaddfile		    distro-info
+ sbverify			    xdpyinfo				 xfsettingsd			  dpkg-deb			    domainname
+ sbvarsign			    viewres				 xfce4-settings-manager		  dpkg-checkbuilddeps		    dnsdomainname
+ sbsign				    luit				 xfce4-settings-editor		  dpkg-buildpackage		    edit
+ sbsiglist			    listres				 xfce4-mouse-settings		  dpkg-buildflags		    editor
+ sbkeysync			    editres				 xfce4-mime-settings		  dpkg-architecture		    eglinfo
+ sbattach			    appres				 xfce4-mime-helper		  dpkg				    es2_info
+ kmodsign			    xvidtune				 xfce4-keyboard-settings	  aa-features-abi		    es2gears_x11
+ dh_bash-completion		    xstdcmap				 xfce4-find-cursor		  aa-exec			    es2gears_wayland
+ setupcon			    xsetroot				 xfce4-display-settings		  aa-enabled			    es2tri
+ ckbcomp			    xsetpointer				 xfce4-color-settings		  ssh-argv0			    ex
+ bzexe				    xsetmode				 xfce4-appearance-settings	  clear_console			    ftp
+ select-default-iwrap		    xset				 xfce4-accessibility-settings	  bashbug			    foo2zjs-icc2ps
+ ispell-wrapper			    xrefresh				 pygettext3.10			  bash				    fwupdagent
+ thunar-settings		    xrdb				 unmkinitramfs			  write.ul			    fusermount
+ thunar				    xrandr				 lsinitramfs			  whereis			    geqn
+ deb-systemd-helper		    xmodmap				 mokutil			  wdctl				    ginstall-info
+ run-mailcap			    xkeystone				 file				  wall				    glxinfo
+ cautious-launcher		    xhost				 mesa-overlay-control.py	  uuidparse			    glxheads
+ xfce4-popup-whiskermenu	    xgamma				 lsattr				  uuidgen			    glxgears
+ exo-open			    xcmsdb				 chattr				  utmpdump			    glxdemo
+ exo-desktop-item-edit		    xauth				 software-properties-gtk	  unshare			    gnome-help
+ migrate-pubring-from-classic-gpg   showrgb				 add-apt-repository		  umount			    gnome-keyring
+ numlockx			    sessreg				 watch				  ul				    gnome-www-browser
+ lesspipe			    iceauth				 w				  uclampset			    gpic
+ keyring			    xdg-user-dirs-update		 vmstat				  taskset			    grub-ntldr-img
+ mimetype			    xdg-user-dir			 uptime				  su				    gtbl
+ mimeopen			    xdg-user-dirs-gtk-update		 top				  setterm			    hd
+ mtr-packet			    ucs2any				 tload				  setsid			    i386
+ mtr				    mkfontscale				 slabtop			  setpriv			    hp-timedate
+ speaker-test			    mkfontdir				 skill				  setarch			    hp-testpage
+ iecset				    fonttosfnt				 pwdx				  scriptreplay			    hp-setup
+ axfer				    bdftruncate				 ps				  scriptlive			    hp-scan
+ aseqnet			    bdftopcf				 pmap				  script			    hp-query
+ aseqdump			    xinput				 pidwait			  rev				    hp-probe
+ arecordmidi			    zipsplit				 pgrep				  resizepart			    hp-plugin
+ aplaymidi			    zipnote				 kill				  renice			    hp-pkservice
+ aplay				    zipcloak				 free				  prlimit			    hp-makeuri
+ amixer				    zip					 udevadm			  partx				    hp-logcapture
+ amidi				    rpcgen				 timedatectl			  nsenter			    hp-levels
+ alsaucm			    unsquashfs				 systemd-tty-ask-password-agent   namei				    hp-info
+ alsatplg			    mksquashfs				 systemd-tmpfiles		  mountpoint			    hp-firmware
+ alsamixer			    tclsh8.6				 systemd-sysusers		  mount				    hp-doctor
+ alsaloop			    xinit				 systemd-sysext			  more				    hp-config_usb_printer
+ alsabat			    startx				 systemd-stdio-bridge		  mesg				    hp-colorcal
+ aconnect			    tnftp				 systemd-socket-activate	  mcookie			    hp-clean
+ update-mime-database		    ngettext				 systemd-run			  lsns				    hp-check
+ unattended-upgrade		    gettext.sh				 systemd-path			  lsmem				    hp-align
+ hp-plugin-ubuntu		    gettext				 systemd-notify			  lslogins			    infotocap
+ mawk				    envsubst				 systemd-mount			  lslocks			    infobrowser
+ acpi_listen			    umax_pp				 systemd-machine-id-setup	  lsipc				    iptables-xml
+ php.default			    scanimage				 systemd-inhibit		  lscpu				    lastb
+ phar.phar.default		    sane-find-scanner			 systemd-id128			  lsblk				    lessfile
+ phar.default			    gamma4scanimage			 systemd-hwdb			  look				    linux64
+ lwp-request			    yelp				 systemd-escape			  logger			    linux32
+ lwp-mirror			    gucharmap				 systemd-detect-virt		  last				    lsmod
+ lwp-dump			    sensors-conf-convert		 systemd-delta			  ipcs				    lzmore
+ lwp-download			    sensors				 systemd-cryptenroll		  ipcrm				    lzma
+ tracepath			    libwacom-show-stylus		 systemd-cgtop			  ipcmk				    lzless
+ ping				    libwacom-list-local-devices		 systemd-cgls			  ionice			    lzgrep
+ install-info			    libwacom-list-devices		 systemd-cat			  hexdump			    lzfgrep
+ info				    dh_dkms				 systemd-ask-password		  hardlink			    lzegrep
+ perli11ndoc			    xsetwacom				 systemd-analyze		  getopt			    lzdiff
+ enchant-lsmod-2		    isdv4-serial-inputattach		 systemctl			  flock				    lzcmp
+ enchant-2			    isdv4-serial-debugger		 resolvectl			  findmnt			    lzcat
+ boltctl			    udisksctl				 networkctl			  fincore			    md5sum.textutils
+ intel-virtual-output		    whois				 loginctl			  fallocate			    mt
+ file2brl			    mkpasswd				 localectl			  eject				    netcat
+ xdg-dbus-proxy			    xzmore				 journalctl			  dmesg				    nc
+ red				    xzless				 hostnamectl			  delpart			    nawk
+ ed				    xzgrep				 busctl				  column			    nisdomainname
+ make-first-existing-target	    xzdiff				 bootctl			  colrm				    nmtui-hostname
+ make				    xz					 zipdetails			  colcrt			    nmtui-edit
+ gmake				    lzmainfo				 xsubpp				  col				    nmtui-connect
+ deb-systemd-invoke		    xubuntu-numlockx			 streamzip			  chrt				    open
+ xfce4-notifyd-config		    thunar-print			 splain				  choom				    on_ac_power
+ strace				    glxinfo.x86_64-linux-gnu		 shasum				  addpart			    parecord
+ cvt				    glxheads.x86_64-linux-gnu		 ptargrep			  lesskey			    parec
+ debconf-show			    glxgears.x86_64-linux-gnu		 ptardiff			  lessecho			    paplay
+ debconf-set-selections		    glxdemo.x86_64-linux-gnu		 ptar				  less				    pamon
+ debconf-escape			    es2tri.x86_64-linux-gnu		 prove				  mt-gnu			    pager
+ debconf-copydb			    es2_info.x86_64-linux-gnu		 podchecker			  cpio				    pdb3
+ debconf-communicate		    es2gears_x11.x86_64-linux-gnu	 pod2usage			  zdump				    pidof
+ debconf-apt-progress		    es2gears_wayland.x86_64-linux-gnu	 pod2text			  tzselect			    pico
+ debconf			    eglinfo.x86_64-linux-gnu		 pod2man			  sprof				    pinentry-x11
+ pa-info			    notify-send				 pod2html			  sotruss			    pinentry
+ colormgr			    zenity				 pl2pm				  pldd				    ping6
+ cd-it8				    gdialog				 piconv				  mtrace			    ping4
+ cd-iccdump			    networkd-dispatcher			 perlthanks			  memusagestat			    pkill
+ cd-fix-profile			    nmtui				 perlivp			  memusage			    print
+ cd-create-profile		    nm-online				 perlbug			  localedef			    psfstriptable
+ nc.openbsd			    nmcli				 perl5.34-x86_64-linux-gnu	  locale			    psfgettable
+ ssh-copy-id			    gnome-keyring-daemon		 perl5.34.0			  ldd				    psfaddtable
+ pon				    gnome-keyring-3			 perl				  iconv				    pstree.x11
+ poff				    watchgnupg				 libnetcfg			  getent			    pw-dsdplay
+ plog				    kbxutil				 json_pp			  getconf			    pydoc3
+ appstreamcli			    gpg-zip				 instmodsh			  gencat			    py3versions
+ spice-vdagent			    gpg-wks-server			 h2xs				  gdk-pixbuf-thumbnailer	    pw-record
+ pkttyagent			    gpgv				 h2ph				  gdk-pixbuf-pixdata		    pw-play
+ pkexec				    gpgtar				 encguess			  gdk-pixbuf-csource		    pw-midirecord
+ pkcheck			    gpgsplit				 enc2xs				  gdbtui			    pw-midiplay
+ pkaction			    gpgsm				 cpan5.34-x86_64-linux-gnu	  gdb-add-index			    python3
+ gedit				    gpgparsemail			 cpan				  gdb				    pygettext3
+ vmwarectrl			    gpg-connect-agent			 corelist			  gcore				    rcp
+ wireshark			    gpgconf				 ubuntu-distro-info		  wget				    rbash
+ text2pcap			    gpgcompose				 debian-distro-info		  ubuntu-security-status	    reset
+ sharkd				    gpg-agent				 tar				  hwe-support-status		    rlogin
+ reordercap			    gpg					 vmwgfxctrl			  ssh-keyscan			    rsh
+ rawshark			    dirmngr-client			 vmware-xferlogs		  ssh-keygen			    rtstat
+ randpkt			    dirmngr				 vmware-vmblock-fuse		  ssh-agent			    rview
+ mmdbresolve			    xdg-settings			 vmware-vgauth-cmd		  ssh-add			    see
+ mergecap			    xdg-screensaver			 vmware-user-suid-wrapper	  ssh				    sh
+ editcap			    xdg-open				 vmware-user			  sftp				    sg
+ dumpcap			    xdg-mime				 vmware-toolbox-cmd		  scp				    slogin
+ captype			    xdg-icon-resource			 vmware-rpctool			  apport-bug			    snice
+ capinfos			    xdg-email				 vmware-namespace-cmd		  ubuntu-bug			    sqfscat
+ pipewire-media-session		    xdg-desktop-menu			 vmware-hgfsclient		  oem-getlogs			    sqfstar
+ fakeroot-tcp			    xdg-desktop-icon			 vmware-checkvm			  apport-unpack			    static-sh
+ fakeroot-sysv			    znew				 vmware-alias-import		  apport-collect		    sudoedit
+ faked-tcp			    zmore				 vmtoolsd			  apport-cli			    systemd
+ faked-sysv			    zless				 vm-support			  gtk-update-icon-cache		    systemd-umount
+ nm-connection-editor		    zgrep				 vmhgfs-fuse			  gtk-query-settings		    tclsh
+ nm-applet			    zforce				 VGAuthService			  gtk-launch			    telnet
+ upower				    zfgrep				 x86_64-linux-gnu-strip		  gtk-encode-symbolic-svg	    unattended-upgrades
+ kernel-install			    zegrep				 x86_64-linux-gnu-strings	  gtk-builder-tool		    unlzma
+ xterm				    zdiff				 x86_64-linux-gnu-size		  broadwayd			    unxz
+ uxterm				    zcmp				 x86_64-linux-gnu-readelf	  mmcli				    unzstd
+ resize				    zcat				 x86_64-linux-gnu-ranlib	  VirtualBoxVM			    view
+ lxterm				    uncompress				 x86_64-linux-gnu-objdump	  virtualboxvm			    vi
+ koi8rxterm			    gzip				 x86_64-linux-gnu-objcopy	  VirtualBox			    which
+ session-migration		    gzexe				 x86_64-linux-gnu-nm		  virtualbox			    write
+ whatis				    gunzip				 x86_64-linux-gnu-ld.gold	  vboxwebsrv			    x-www-browser
+ man-recode			    dbus-uuidgen			 x86_64-linux-gnu-ld.bfd	  VBoxSDL			    x-window-manager
+ manpath			    dbus-update-activation-environment	 x86_64-linux-gnu-ld		  vboxsdl			    x-terminal-emulator
+ mandb				    dbus-send				 x86_64-linux-gnu-gprof		  VBoxManage			    x-session-manager
+ man				    dbus-run-session			 x86_64-linux-gnu-gold		  vboxmanage			    x86_64-linux-gnu-cpp
+ lexgrog			    dbus-monitor			 x86_64-linux-gnu-elfedit	  vboximg-mount			    x86_64
+ catman				    dbus-launch				 x86_64-linux-gnu-dwp		  vbox-img			    xfrun4
+ whiptail			    dbus-daemon				 x86_64-linux-gnu-c++filt	  VBoxHeadless			    xzfgrep
+ plymouth			    dbus-cleanup-sockets		 x86_64-linux-gnu-as		  vboxheadless			    xzegrep
+ word-list-compress		    ntfswipe				 x86_64-linux-gnu-ar		  VBoxClient			    xzcmp
+ run-with-aspell		    ntfsusermap				 x86_64-linux-gnu-addr2line	  VBoxBalloonCtrl		    xzcat
+ prezip-bin			    ntfstruncate			 strip				  vboxballoonctrl		    ypdomainname
+ prezip				    ntfssecaudit			 strings			  rdesktop-vrdp			    zstdcat
+ preunzip			    ntfsrecover				 size				  wpa_passphrase		    zstdmt
+ precat				    ntfsmove				 readelf			  x86_64-linux-gnu-python3-config   fakeroot
+ aspell-import			    ntfsls				 ranlib				  python3-config		    aptitude
+ aspell				    ntfsinfo				 objdump			  py3compile			    vim
+ dc				    ntfsfix				 objcopy			  py3clean			    vimdiff
+ bc				    ntfsfallocate			 nm				  busybox			    rvim
+ bzmore				    ntfsdecrypt				 ld.gold			  openssl			    php
+ bzip2recover			    ntfscmp				 ld.bfd				  c_rehash			    phar
+ bzip2				    ntfscluster				 ld				  helpztags			    phar.phar
+ bzgrep				    ntfscat				 gprof				  apt-sortpkgs			    ctags
+ bzdiff				    ntfs-3g.probe			 gold				  apt-mark			    ebrowse
+ bzcat				    ntfs-3g				 elfedit			  apt-key			    emacsclient
+ bunzip2			    lowntfs-3g				 dwp				  apt-get			    etags
+ crontab			    spa-resample			 c++filt			  apt-ftparchive		    emacs
+ dash				    spa-monitor				 as				  apt-extracttemplates		    cc
+ tbl-dctrl			    spa-json-dump			 ar				  apt-config			    c89
+ sort-dctrl			    spa-inspect				 addr2line			  apt-cdrom			    c99
+ join-dctrl			    spa-acp-tool			 zipinfo			  apt-cache			    c++
+ grep-status			    pw-v4l2				 zipgrep			  apt				    gnome-text-editor
+ grep-debtags			    pw-top				 unzipsfx			  ubuntu-advantage		    java
+ grep-dctrl			    pw-reserve				 unzip				  ua				    jjs
+ grep-available			    pw-profiler				 funzip				  pro				    keytool
+ grep-aptavail			    pw-mon				 passwd				  locale-check			    rmid
+ which.debianutils		    pw-mididump				 newgrp				  do-release-upgrade		    rmiregistry
+ tempfile			    pw-metadata				 login				  etags.emacs			    pack200
+ savelog			    pw-loopback				 lastlog			  emacs-gtk			    unpack200
+ run-parts			    pw-link				 gpasswd			  emacsclient.emacs		    jexec
+ ischroot			    pw-dump				 faillog			  ebrowse.emacs			    jar
+ update-desktop-database	    pw-dot				 expiry				  ctags.emacs			    jarsigner
+ desktop-file-validate		    pw-cli				 chsh				  unopkg			    javac
+ desktop-file-install		    pw-cat				 chfn				  soffice			    javadoc
+ sdiff				    pipewire				 chage				  lofromtemplate		    javap
+ diff3				    unicode_stop			 yes				  loffice			    jcmd
+ diff				    unicode_start			 whoami				  libreoffice			    jdb
+ cmp				    splitfont				 who				  bwrap				    jdeprscan
+ xargs				    showkey				 wc				  nsupdate			    jdeps
+ find				    showconsolefont			 vdir				  nslookup			    jfr
+ fc-validate			    setmetamode				 users				  mdig				    jimage
+ fc-scan			    setlogcons				 unlink				  host				    jinfo
+ fc-query			    setleds				 uniq				  dig				    jlink
+ fc-pattern			    setkeycodes				 unexpand			  delv				    jmap
+ fc-match			    setfont				 uname				  ppdpo				    jmod
+ fc-list			    screendump				 tty				  ppdmerge			    jps
+ fc-conflist			    resizecons				 tsort				  ppdi				    jrunscript
+ fc-cat				    psfxtable				 truncate			  ppdhtml			    jshell
+ fc-cache			    openvt				 true				  ppdc				    jstack
+ fusermount3			    mk_modmap				 tr				  lpstat			    jstat
+ grep				    mapscrn				 touch				  lprm				    jstatd
+ fgrep				    loadunimap				 timeout			  lpr				    rmic
+ egrep				    loadkeys				 test				  lpq				    serialver
+ troff				    kbd_mode				 tee				  lpoptions			    jaotc
+ tbl				    kbdinfo				 tail				  lp				    jhsdb
+ soelim				    getkeycodes				 tac				  ipptool			    rsync-ssl
+ preconv			    fgconsole				 sync				  ippfind			    rsync
+ pic				    dumpkeys				 sum				  cupstestppd			    rrsync
+ nroff				    deallocvt				 stty				  cancel			    x86_64-linux-gnu-python3.10-config
+ neqn				    codepage				 stdbuf				  ubuntu-drivers		    python3.10-config
+ grotty				    chvt				 stat				  quirks-handler		    python3.10
+ grops				    grub-syslinux2cfg			 split				  nvidia-detector		    pydoc3.10
+ grog				    grub-script-check			 sort				  gpu-manager			    pdb3.10
+ groff				    grub-render-label			 sleep				  foomatic-rip			    xxd
+ eqn				    grub-mount				 shuf				  driverless-fax		    vimtutor
+ hostname			    grub-mkstandalone			 shred				  driverless			    vim.tiny
+ gcr-viewer			    grub-mkrescue			 sha512sum			  rnano				    vim.basic
+ ss				    grub-mkrelpath			 sha384sum			  nano				    code
+ routel				    grub-mkpasswd-pbkdf2		 sha256sum			  snapfuse
+ routef				    grub-mknetdir			 sha224sum			  snapctl
+ rdma				    grub-mklayout			 sha1sum			  snap
+ nstat				    grub-mkimage			 seq				  Xorg
+[Parent]: Child 20129 finished with status code 0. Onward!
+Selection #3: /bin [FAILURE]
+Current reported directory: /usr/bin
+[Parent]: I am waiting for PID 20130 to finish.
+[Child, PID: 20130]: Executing 'ls -tr' command...
+ laptop-detect			    lnstat				 grub-mkfont			  runcon			    X
+ lspgpot			    ip					 grub-menulst2cfg		  rmdir				    gtf
+ dh_installxmlcatalogs		    inputattach				 grub-kbdcomp			  rm				    pip3.10
+ lsb_release			    kerneloops-submit			 grub-glue-efi			  realpath			    pip3
+ xiccd				    transicc				 grub-fstest			  readlink			    pip
+ xcape				    tificc				 grub-file			  pwd				    ps2txt
+ rjoe				    psicc				 grub-editenv			  ptx				    ps2ps2
+ jstar				    linkicc				 check-language-support		  printf			    ps2ps
+ jpico				    jpgicc				 nping				  printenv			    ps2pdfwr
+ joe				    paperconf				 nmap				  pr				    ps2pdf14
+ jmacs				    zstdless				 zjsdecode			  pinky				    ps2pdf13
+ m17n-db			    zstdgrep				 xqxdecode			  pathchk			    ps2pdf12
+ rgrep				    zstd				 usb_printerid			  paste				    ps2pdf
+ syndaemon			    pzstd				 slxdecode			  od				    ps2epsi
+ synclient			    lsof				 qpdldecode			  numfmt			    ps2ascii
+ dh_perl_openssl		    netstat				 printer-profile		  nproc				    printafm
+ ucfr				    telnet.netkit			 opldecode			  nohup				    pphs
+ ucfq				    trust				 oakdecode			  nl				    pfbtopfa
+ ucf				    p11-kit				 lavadecode			  nice				    pf2afm
+ lcf				    patch				 hipercdecode			  mv				    pdf2ps
+ linux-update-symlinks		    pnm2ppa				 hbpldecode			  mktemp			    pdf2dsc
+ linux-check-removal		    calibrate_ppa			 gipddecode			  mknod				    gsnd
+ chromium-browser		    lshw				 foo2zjs-wrapper		  mkfifo			    gslp
+ synaptic-pkexec		    m2400w				 foo2zjs-pstops			  mkdir				    gslj
+ c99-gcc			    m2300w-wrapper			 foo2zjs			  md5sum			    gsdj500
+ c89-gcc			    m2300w				 foo2xqx-wrapper		  ls				    gsdj
+ ssh-import-id-lp		    min12xxw				 foo2xqx			  logname			    gsbj
+ ssh-import-id-gh		    esc-m				 foo2slx-wrapper		  ln				    gs
+ xfconf-query			    msexpand				 foo2slx			  link				    ghostscript
+ xfdesktop-settings		    mscompress				 foo2qpdl-wrapper		  join				    eps2eps
+ xfdesktop			    pstree				 foo2qpdl			  install			    dvipdf
+ xfce4-terminal.wrapper		    pslog				 foo2oak-wrapper		  id				    pkmon
+ xfce4-terminal			    prtstat				 foo2oak			  hostid			    pkcon
+ xfce4-power-manager-settings	    peekfd				 foo2lava-wrapper		  head				    gsettings
+ xfce4-power-manager		    killall				 foo2lava			  groups			    gresource
+ thunar-volman-settings		    fuser				 foo2hp2600-wrapper		  fold				    glib-compile-schemas
+ thunar-volman			    pinentry-gtk-2			 foo2hp				  fmt				    gio-querymodules
+ xfce4-screensaver-preferences	    pinentry-gnome3			 foo2hiperc-wrapper		  false				    gio
+ xfce4-screensaver-configure	    libwacom-update-db			 foo2hiperc			  factor			    gdbus
+ xfce4-screensaver-command	    sed					 foo2hbpl2-wrapper		  expr				    gapplication
+ xfce4-screensaver		    ijs_pxljr				 foo2hbpl2			  expand			    php8.1
+ xfwm4-workspace-settings	    airscan-discover			 foo2ddst-wrapper		  env				    phar.phar8.1
+ xfwm4-tweaks-settings		    time				 foo2ddst			  echo				    phar8.1.phar
+ xfwm4-settings			    usbreset				 ddstdecode			  du				    phar8.1
+ xfwm4				    usbhid-dump				 arm2hpdl			  dirname			    thunderbird
+ xfce4-appfinder		    usb-devices				 sudoreplay			  dircolors			    gst-typefind-1.0
+ ssh-import-id			    lsusb				 sudo				  dir				    gst-tester-1.0
+ strace-log-merge		    xwud				 cvtsudoers			  df				    gst-stats-1.0
+ xflock4			    xwd					 x86_64-linux-gnu-lto-dump-12	  dd				    gst-launch-1.0
+ xfce4-session-settings		    xsm					 x86_64-linux-gnu-gcov-tool-12	  date				    gst-inspect-1.0
+ xfce4-session-logout		    xmore				 x86_64-linux-gnu-gcov-dump-12	  cut				    x86_energy_perf_policy
+ xfce4-session			    xman				 x86_64-linux-gnu-gcov-12	  csplit			    usbipd
+ startxfce4			    xmag				 x86_64-linux-gnu-gcc-ranlib-12   cp				    usbip
+ aptitude-run-state-bundle	    xlogo				 x86_64-linux-gnu-gcc-nm-12	  comm				    turbostat
+ aptitude-curses		    xload				 x86_64-linux-gnu-gcc-ar-12	  cksum				    perf
+ aptitude-create-state-bundle	    xgc					 x86_64-linux-gnu-gcc-12	  chown				    cpupower
+ aptitude-changelog-parser	    xeyes				 x86_64-linux-gnu-cpp-12	  chmod				    acpidbg
+ linux-version			    xedit				 lto-dump-12			  chgrp				    git-upload-pack
+ os-prober			    xditview				 gcov-tool-12			  chcon				    git-upload-archive
+ linux-boot-prober		    xcutsel				 gcov-dump-12			  cat				    git-shell
+ efibootmgr			    xcursorgen				 gcov-12			  basenc			    git-receive-pack
+ efibootdump			    xconsole				 gcc-ranlib-12			  basename			    git
+ x86_64-linux-gnu-gcov-tool	    xclock				 gcc-nm-12			  base64			    pdfunite
+ x86_64-linux-gnu-gcov-dump	    xclipboard				 gcc-ar-12			  base32			    pdftotext
+ x86_64-linux-gnu-gcov		    xcalc				 gcc-12				  b2sum				    pdftops
+ x86_64-linux-gnu-gcc-ranlib	    xbiff				 cpp-12				  arch				    pdftoppm
+ x86_64-linux-gnu-gcc-nm	    x11perfcomp				 x86_64-linux-gnu-lto-dump-11	 '['				    pdftohtml
+ x86_64-linux-gnu-gcc-ar	    x11perf				 x86_64-linux-gnu-gcov-tool-11	  tcpdump			    pdftocairo
+ x86_64-linux-gnu-gcc		    transset				 x86_64-linux-gnu-gcov-dump-11	  start-pulseaudio-x11		    pdfsig
+ x86_64-linux-gnu-g++		    smproxy				 x86_64-linux-gnu-gcov-11	  pulseaudio			    pdfseparate
+ gcov-tool			    rstartd				 x86_64-linux-gnu-gcc-ranlib-11   pax11publish			    pdfinfo
+ gcov-dump			    rstart				 x86_64-linux-gnu-gcc-nm-11	  pasuspender			    pdfimages
+ gcov				    rendercheck				 x86_64-linux-gnu-gcc-ar-11	  padsp				    pdffonts
+ gcc-ranlib			    oclock				 x86_64-linux-gnu-gcc-11	  pactl				    pdfdetach
+ gcc-nm				    ico					 x86_64-linux-gnu-g++-11	  pacmd				    pdfattach
+ gcc-ar				    bmtoa				 x86_64-linux-gnu-cpp-11	  pacat				    X11
+ gcc				    bitmap				 lto-dump-11			  update-alternatives		    Thunar
+ g++				    atobm				 gcov-tool-11			  dpkg-vendor			    POST
+ xfce4-popup-windowmenu		    xkbwatch				 gcov-dump-11			  dpkg-trigger			    HEAD
+ xfce4-popup-directorymenu	    xkbvleds				 gcov-11			  dpkg-statoverride		    GET
+ xfce4-popup-applicationsmenu	    xkbprint				 gcc-ranlib-11			  dpkg-split			    apt-add-repository
+ xfce4-panel			    xkbevd				 gcc-nm-11			  dpkg-source			    apropos
+ xfce4-screenshooter		    xkbcomp				 gcc-ar-11			  dpkg-shlibdeps		    arecord
+ kmod				    xkbbell				 gcc-11				  dpkg-scansources		    awk
+ perldoc			    setxkbmap				 g++-11				  dpkg-scanpackages		    browse
+ pavucontrol			    xwininfo				 tset				  dpkg-realpath			    charmap
+ setfacl			    xvinfo				 tput				  dpkg-query			    captoinfo
+ getfacl			    xprop				 toe				  dpkg-parsechangelog		    bzless
+ chacl				    xmessage				 tic				  dpkg-name			    bzfgrep
+ sensible-pager			    xlsfonts				 tabs				  dpkg-mergechangelogs		    bzegrep
+ sensible-editor		    xlsclients				 infocmp			  dpkg-maintscript-helper	    bzcmp
+ sensible-browser		    xlsatoms				 clear				  dpkg-gensymbols		    compose
+ select-editor			    xkill				 fwupdtool			  dpkg-gencontrol		    cpp-11
+ setpci				    xfontsel				 fwupdmgr			  dpkg-genchanges		    cpp
+ lspci				    xfd					 fwupdate			  dpkg-genbuildinfo		    ctstat
+ python				    xev					 dfu-tool			  dpkg-divert			    desktop-file-edit
+ dm-tool			    xdriinfo				 dbxtool			  dpkg-distaddfile		    distro-info
+ sbverify			    xdpyinfo				 xfsettingsd			  dpkg-deb			    domainname
+ sbvarsign			    viewres				 xfce4-settings-manager		  dpkg-checkbuilddeps		    dnsdomainname
+ sbsign				    luit				 xfce4-settings-editor		  dpkg-buildpackage		    edit
+ sbsiglist			    listres				 xfce4-mouse-settings		  dpkg-buildflags		    editor
+ sbkeysync			    editres				 xfce4-mime-settings		  dpkg-architecture		    eglinfo
+ sbattach			    appres				 xfce4-mime-helper		  dpkg				    es2_info
+ kmodsign			    xvidtune				 xfce4-keyboard-settings	  aa-features-abi		    es2gears_x11
+ dh_bash-completion		    xstdcmap				 xfce4-find-cursor		  aa-exec			    es2gears_wayland
+ setupcon			    xsetroot				 xfce4-display-settings		  aa-enabled			    es2tri
+ ckbcomp			    xsetpointer				 xfce4-color-settings		  ssh-argv0			    ex
+ bzexe				    xsetmode				 xfce4-appearance-settings	  clear_console			    ftp
+ select-default-iwrap		    xset				 xfce4-accessibility-settings	  bashbug			    foo2zjs-icc2ps
+ ispell-wrapper			    xrefresh				 pygettext3.10			  bash				    fwupdagent
+ thunar-settings		    xrdb				 unmkinitramfs			  write.ul			    fusermount
+ thunar				    xrandr				 lsinitramfs			  whereis			    geqn
+ deb-systemd-helper		    xmodmap				 mokutil			  wdctl				    ginstall-info
+ run-mailcap			    xkeystone				 file				  wall				    glxinfo
+ cautious-launcher		    xhost				 mesa-overlay-control.py	  uuidparse			    glxheads
+ xfce4-popup-whiskermenu	    xgamma				 lsattr				  uuidgen			    glxgears
+ exo-open			    xcmsdb				 chattr				  utmpdump			    glxdemo
+ exo-desktop-item-edit		    xauth				 software-properties-gtk	  unshare			    gnome-help
+ migrate-pubring-from-classic-gpg   showrgb				 add-apt-repository		  umount			    gnome-keyring
+ numlockx			    sessreg				 watch				  ul				    gnome-www-browser
+ lesspipe			    iceauth				 w				  uclampset			    gpic
+ keyring			    xdg-user-dirs-update		 vmstat				  taskset			    grub-ntldr-img
+ mimetype			    xdg-user-dir			 uptime				  su				    gtbl
+ mimeopen			    xdg-user-dirs-gtk-update		 top				  setterm			    hd
+ mtr-packet			    ucs2any				 tload				  setsid			    i386
+ mtr				    mkfontscale				 slabtop			  setpriv			    hp-timedate
+ speaker-test			    mkfontdir				 skill				  setarch			    hp-testpage
+ iecset				    fonttosfnt				 pwdx				  scriptreplay			    hp-setup
+ axfer				    bdftruncate				 ps				  scriptlive			    hp-scan
+ aseqnet			    bdftopcf				 pmap				  script			    hp-query
+ aseqdump			    xinput				 pidwait			  rev				    hp-probe
+ arecordmidi			    zipsplit				 pgrep				  resizepart			    hp-plugin
+ aplaymidi			    zipnote				 kill				  renice			    hp-pkservice
+ aplay				    zipcloak				 free				  prlimit			    hp-makeuri
+ amixer				    zip					 udevadm			  partx				    hp-logcapture
+ amidi				    rpcgen				 timedatectl			  nsenter			    hp-levels
+ alsaucm			    unsquashfs				 systemd-tty-ask-password-agent   namei				    hp-info
+ alsatplg			    mksquashfs				 systemd-tmpfiles		  mountpoint			    hp-firmware
+ alsamixer			    tclsh8.6				 systemd-sysusers		  mount				    hp-doctor
+ alsaloop			    xinit				 systemd-sysext			  more				    hp-config_usb_printer
+ alsabat			    startx				 systemd-stdio-bridge		  mesg				    hp-colorcal
+ aconnect			    tnftp				 systemd-socket-activate	  mcookie			    hp-clean
+ update-mime-database		    ngettext				 systemd-run			  lsns				    hp-check
+ unattended-upgrade		    gettext.sh				 systemd-path			  lsmem				    hp-align
+ hp-plugin-ubuntu		    gettext				 systemd-notify			  lslogins			    infotocap
+ mawk				    envsubst				 systemd-mount			  lslocks			    infobrowser
+ acpi_listen			    umax_pp				 systemd-machine-id-setup	  lsipc				    iptables-xml
+ php.default			    scanimage				 systemd-inhibit		  lscpu				    lastb
+ phar.phar.default		    sane-find-scanner			 systemd-id128			  lsblk				    lessfile
+ phar.default			    gamma4scanimage			 systemd-hwdb			  look				    linux64
+ lwp-request			    yelp				 systemd-escape			  logger			    linux32
+ lwp-mirror			    gucharmap				 systemd-detect-virt		  last				    lsmod
+ lwp-dump			    sensors-conf-convert		 systemd-delta			  ipcs				    lzmore
+ lwp-download			    sensors				 systemd-cryptenroll		  ipcrm				    lzma
+ tracepath			    libwacom-show-stylus		 systemd-cgtop			  ipcmk				    lzless
+ ping				    libwacom-list-local-devices		 systemd-cgls			  ionice			    lzgrep
+ install-info			    libwacom-list-devices		 systemd-cat			  hexdump			    lzfgrep
+ info				    dh_dkms				 systemd-ask-password		  hardlink			    lzegrep
+ perli11ndoc			    xsetwacom				 systemd-analyze		  getopt			    lzdiff
+ enchant-lsmod-2		    isdv4-serial-inputattach		 systemctl			  flock				    lzcmp
+ enchant-2			    isdv4-serial-debugger		 resolvectl			  findmnt			    lzcat
+ boltctl			    udisksctl				 networkctl			  fincore			    md5sum.textutils
+ intel-virtual-output		    whois				 loginctl			  fallocate			    mt
+ file2brl			    mkpasswd				 localectl			  eject				    netcat
+ xdg-dbus-proxy			    xzmore				 journalctl			  dmesg				    nc
+ red				    xzless				 hostnamectl			  delpart			    nawk
+ ed				    xzgrep				 busctl				  column			    nisdomainname
+ make-first-existing-target	    xzdiff				 bootctl			  colrm				    nmtui-hostname
+ make				    xz					 zipdetails			  colcrt			    nmtui-edit
+ gmake				    lzmainfo				 xsubpp				  col				    nmtui-connect
+ deb-systemd-invoke		    xubuntu-numlockx			 streamzip			  chrt				    open
+ xfce4-notifyd-config		    thunar-print			 splain				  choom				    on_ac_power
+ strace				    glxinfo.x86_64-linux-gnu		 shasum				  addpart			    parecord
+ cvt				    glxheads.x86_64-linux-gnu		 ptargrep			  lesskey			    parec
+ debconf-show			    glxgears.x86_64-linux-gnu		 ptardiff			  lessecho			    paplay
+ debconf-set-selections		    glxdemo.x86_64-linux-gnu		 ptar				  less				    pamon
+ debconf-escape			    es2tri.x86_64-linux-gnu		 prove				  mt-gnu			    pager
+ debconf-copydb			    es2_info.x86_64-linux-gnu		 podchecker			  cpio				    pdb3
+ debconf-communicate		    es2gears_x11.x86_64-linux-gnu	 pod2usage			  zdump				    pidof
+ debconf-apt-progress		    es2gears_wayland.x86_64-linux-gnu	 pod2text			  tzselect			    pico
+ debconf			    eglinfo.x86_64-linux-gnu		 pod2man			  sprof				    pinentry-x11
+ pa-info			    notify-send				 pod2html			  sotruss			    pinentry
+ colormgr			    zenity				 pl2pm				  pldd				    ping6
+ cd-it8				    gdialog				 piconv				  mtrace			    ping4
+ cd-iccdump			    networkd-dispatcher			 perlthanks			  memusagestat			    pkill
+ cd-fix-profile			    nmtui				 perlivp			  memusage			    print
+ cd-create-profile		    nm-online				 perlbug			  localedef			    psfstriptable
+ nc.openbsd			    nmcli				 perl5.34-x86_64-linux-gnu	  locale			    psfgettable
+ ssh-copy-id			    gnome-keyring-daemon		 perl5.34.0			  ldd				    psfaddtable
+ pon				    gnome-keyring-3			 perl				  iconv				    pstree.x11
+ poff				    watchgnupg				 libnetcfg			  getent			    pw-dsdplay
+ plog				    kbxutil				 json_pp			  getconf			    pydoc3
+ appstreamcli			    gpg-zip				 instmodsh			  gencat			    py3versions
+ spice-vdagent			    gpg-wks-server			 h2xs				  gdk-pixbuf-thumbnailer	    pw-record
+ pkttyagent			    gpgv				 h2ph				  gdk-pixbuf-pixdata		    pw-play
+ pkexec				    gpgtar				 encguess			  gdk-pixbuf-csource		    pw-midirecord
+ pkcheck			    gpgsplit				 enc2xs				  gdbtui			    pw-midiplay
+ pkaction			    gpgsm				 cpan5.34-x86_64-linux-gnu	  gdb-add-index			    python3
+ gedit				    gpgparsemail			 cpan				  gdb				    pygettext3
+ vmwarectrl			    gpg-connect-agent			 corelist			  gcore				    rcp
+ wireshark			    gpgconf				 ubuntu-distro-info		  wget				    rbash
+ text2pcap			    gpgcompose				 debian-distro-info		  ubuntu-security-status	    reset
+ sharkd				    gpg-agent				 tar				  hwe-support-status		    rlogin
+ reordercap			    gpg					 vmwgfxctrl			  ssh-keyscan			    rsh
+ rawshark			    dirmngr-client			 vmware-xferlogs		  ssh-keygen			    rtstat
+ randpkt			    dirmngr				 vmware-vmblock-fuse		  ssh-agent			    rview
+ mmdbresolve			    xdg-settings			 vmware-vgauth-cmd		  ssh-add			    see
+ mergecap			    xdg-screensaver			 vmware-user-suid-wrapper	  ssh				    sh
+ editcap			    xdg-open				 vmware-user			  sftp				    sg
+ dumpcap			    xdg-mime				 vmware-toolbox-cmd		  scp				    slogin
+ captype			    xdg-icon-resource			 vmware-rpctool			  apport-bug			    snice
+ capinfos			    xdg-email				 vmware-namespace-cmd		  ubuntu-bug			    sqfscat
+ pipewire-media-session		    xdg-desktop-menu			 vmware-hgfsclient		  oem-getlogs			    sqfstar
+ fakeroot-tcp			    xdg-desktop-icon			 vmware-checkvm			  apport-unpack			    static-sh
+ fakeroot-sysv			    znew				 vmware-alias-import		  apport-collect		    sudoedit
+ faked-tcp			    zmore				 vmtoolsd			  apport-cli			    systemd
+ faked-sysv			    zless				 vm-support			  gtk-update-icon-cache		    systemd-umount
+ nm-connection-editor		    zgrep				 vmhgfs-fuse			  gtk-query-settings		    tclsh
+ nm-applet			    zforce				 VGAuthService			  gtk-launch			    telnet
+ upower				    zfgrep				 x86_64-linux-gnu-strip		  gtk-encode-symbolic-svg	    unattended-upgrades
+ kernel-install			    zegrep				 x86_64-linux-gnu-strings	  gtk-builder-tool		    unlzma
+ xterm				    zdiff				 x86_64-linux-gnu-size		  broadwayd			    unxz
+ uxterm				    zcmp				 x86_64-linux-gnu-readelf	  mmcli				    unzstd
+ resize				    zcat				 x86_64-linux-gnu-ranlib	  VirtualBoxVM			    view
+ lxterm				    uncompress				 x86_64-linux-gnu-objdump	  virtualboxvm			    vi
+ koi8rxterm			    gzip				 x86_64-linux-gnu-objcopy	  VirtualBox			    which
+ session-migration		    gzexe				 x86_64-linux-gnu-nm		  virtualbox			    write
+ whatis				    gunzip				 x86_64-linux-gnu-ld.gold	  vboxwebsrv			    x-www-browser
+ man-recode			    dbus-uuidgen			 x86_64-linux-gnu-ld.bfd	  VBoxSDL			    x-window-manager
+ manpath			    dbus-update-activation-environment	 x86_64-linux-gnu-ld		  vboxsdl			    x-terminal-emulator
+ mandb				    dbus-send				 x86_64-linux-gnu-gprof		  VBoxManage			    x-session-manager
+ man				    dbus-run-session			 x86_64-linux-gnu-gold		  vboxmanage			    x86_64-linux-gnu-cpp
+ lexgrog			    dbus-monitor			 x86_64-linux-gnu-elfedit	  vboximg-mount			    x86_64
+ catman				    dbus-launch				 x86_64-linux-gnu-dwp		  vbox-img			    xfrun4
+ whiptail			    dbus-daemon				 x86_64-linux-gnu-c++filt	  VBoxHeadless			    xzfgrep
+ plymouth			    dbus-cleanup-sockets		 x86_64-linux-gnu-as		  vboxheadless			    xzegrep
+ word-list-compress		    ntfswipe				 x86_64-linux-gnu-ar		  VBoxClient			    xzcmp
+ run-with-aspell		    ntfsusermap				 x86_64-linux-gnu-addr2line	  VBoxBalloonCtrl		    xzcat
+ prezip-bin			    ntfstruncate			 strip				  vboxballoonctrl		    ypdomainname
+ prezip				    ntfssecaudit			 strings			  rdesktop-vrdp			    zstdcat
+ preunzip			    ntfsrecover				 size				  wpa_passphrase		    zstdmt
+ precat				    ntfsmove				 readelf			  x86_64-linux-gnu-python3-config   fakeroot
+ aspell-import			    ntfsls				 ranlib				  python3-config		    aptitude
+ aspell				    ntfsinfo				 objdump			  py3compile			    vim
+ dc				    ntfsfix				 objcopy			  py3clean			    vimdiff
+ bc				    ntfsfallocate			 nm				  busybox			    rvim
+ bzmore				    ntfsdecrypt				 ld.gold			  openssl			    php
+ bzip2recover			    ntfscmp				 ld.bfd				  c_rehash			    phar
+ bzip2				    ntfscluster				 ld				  helpztags			    phar.phar
+ bzgrep				    ntfscat				 gprof				  apt-sortpkgs			    ctags
+ bzdiff				    ntfs-3g.probe			 gold				  apt-mark			    ebrowse
+ bzcat				    ntfs-3g				 elfedit			  apt-key			    emacsclient
+ bunzip2			    lowntfs-3g				 dwp				  apt-get			    etags
+ crontab			    spa-resample			 c++filt			  apt-ftparchive		    emacs
+ dash				    spa-monitor				 as				  apt-extracttemplates		    cc
+ tbl-dctrl			    spa-json-dump			 ar				  apt-config			    c89
+ sort-dctrl			    spa-inspect				 addr2line			  apt-cdrom			    c99
+ join-dctrl			    spa-acp-tool			 zipinfo			  apt-cache			    c++
+ grep-status			    pw-v4l2				 zipgrep			  apt				    gnome-text-editor
+ grep-debtags			    pw-top				 unzipsfx			  ubuntu-advantage		    java
+ grep-dctrl			    pw-reserve				 unzip				  ua				    jjs
+ grep-available			    pw-profiler				 funzip				  pro				    keytool
+ grep-aptavail			    pw-mon				 passwd				  locale-check			    rmid
+ which.debianutils		    pw-mididump				 newgrp				  do-release-upgrade		    rmiregistry
+ tempfile			    pw-metadata				 login				  etags.emacs			    pack200
+ savelog			    pw-loopback				 lastlog			  emacs-gtk			    unpack200
+ run-parts			    pw-link				 gpasswd			  emacsclient.emacs		    jexec
+ ischroot			    pw-dump				 faillog			  ebrowse.emacs			    jar
+ update-desktop-database	    pw-dot				 expiry				  ctags.emacs			    jarsigner
+ desktop-file-validate		    pw-cli				 chsh				  unopkg			    javac
+ desktop-file-install		    pw-cat				 chfn				  soffice			    javadoc
+ sdiff				    pipewire				 chage				  lofromtemplate		    javap
+ diff3				    unicode_stop			 yes				  loffice			    jcmd
+ diff				    unicode_start			 whoami				  libreoffice			    jdb
+ cmp				    splitfont				 who				  bwrap				    jdeprscan
+ xargs				    showkey				 wc				  nsupdate			    jdeps
+ find				    showconsolefont			 vdir				  nslookup			    jfr
+ fc-validate			    setmetamode				 users				  mdig				    jimage
+ fc-scan			    setlogcons				 unlink				  host				    jinfo
+ fc-query			    setleds				 uniq				  dig				    jlink
+ fc-pattern			    setkeycodes				 unexpand			  delv				    jmap
+ fc-match			    setfont				 uname				  ppdpo				    jmod
+ fc-list			    screendump				 tty				  ppdmerge			    jps
+ fc-conflist			    resizecons				 tsort				  ppdi				    jrunscript
+ fc-cat				    psfxtable				 truncate			  ppdhtml			    jshell
+ fc-cache			    openvt				 true				  ppdc				    jstack
+ fusermount3			    mk_modmap				 tr				  lpstat			    jstat
+ grep				    mapscrn				 touch				  lprm				    jstatd
+ fgrep				    loadunimap				 timeout			  lpr				    rmic
+ egrep				    loadkeys				 test				  lpq				    serialver
+ troff				    kbd_mode				 tee				  lpoptions			    jaotc
+ tbl				    kbdinfo				 tail				  lp				    jhsdb
+ soelim				    getkeycodes				 tac				  ipptool			    rsync-ssl
+ preconv			    fgconsole				 sync				  ippfind			    rsync
+ pic				    dumpkeys				 sum				  cupstestppd			    rrsync
+ nroff				    deallocvt				 stty				  cancel			    x86_64-linux-gnu-python3.10-config
+ neqn				    codepage				 stdbuf				  ubuntu-drivers		    python3.10-config
+ grotty				    chvt				 stat				  quirks-handler		    python3.10
+ grops				    grub-syslinux2cfg			 split				  nvidia-detector		    pydoc3.10
+ grog				    grub-script-check			 sort				  gpu-manager			    pdb3.10
+ groff				    grub-render-label			 sleep				  foomatic-rip			    xxd
+ eqn				    grub-mount				 shuf				  driverless-fax		    vimtutor
+ hostname			    grub-mkstandalone			 shred				  driverless			    vim.tiny
+ gcr-viewer			    grub-mkrescue			 sha512sum			  rnano				    vim.basic
+ ss				    grub-mkrelpath			 sha384sum			  nano				    code
+ routel				    grub-mkpasswd-pbkdf2		 sha256sum			  snapfuse
+ routef				    grub-mknetdir			 sha224sum			  snapctl
+ rdma				    grub-mklayout			 sha1sum			  snap
+ nstat				    grub-mkimage			 seq				  Xorg
+[Parent]: Child 20130 finished with status code 0. Onward!
+Selection #4: /proc [SUCCESS]
+Current reported directory: /proc
+[Parent]: I am waiting for PID 20131 to finish.
+[Child, PID: 20131]: Executing 'ls -tr' command...
+thread-self  56  42  28   157	   370	 494   224     934   1092  1160  1535  1051  filesystems  17302    19087    2763   19970	      schedstat      kpagecgroup    diskstats
+self	     54  41  27   15	   427	 505   222     940   1103  1185  1938  1044  stat	  17167    19122    2750   zoneinfo	      pressure	     key-users	    crypto
+sys	     53  40  24   14	   462	 510   629     941   1112  1166  1975  1043  interrupts   18406    19221    2433   vmstat	      partitions     keys	    consoles
+1	     52  4   23   13	   463	 kmsg  650     942   1115  1197  1980  1037  7517	  17907    19248    2228   vmallocinfo	      pagetypeinfo   kcore	    bus
+86	     51  39  22   129	   acpi  511   640     945   1120  1207  1960  1036  cgroups	  cpuinfo  meminfo  2185   version_signature  net	     kallsyms	    buddyinfo
+71	     5	 38  21   128	   466	 515   mtrr    949   1124  1202  2110  1025  11141	  18575    19473    2138   version	      mounts	     ioports	    bootconfig
+7	     49  36  20   12	   467	 563   672     1053  1129  1221  2134  1024  11140	  18826    19499    2137   tty		      modules	     iomem	    20131
+63	     48  35  2	  10	   469	 568   683     950   1132  1206  2170  2661  12348	  18891    19522    19756  timer_list	      misc	     fs		    20127
+62	     47  34  19   swaps    471	 584   701     1069  1133  1315  2197  2727  cmdline	  18958    19554    19521  sysvipc	      locks	     fb
+6	     46  32  18   devices  irq	 601   859     1075  1134  1318  719   2848  12849	  18971    19572    19212  sysrq-trigger      loadavg	     execdomains
+59	     45  31  17   194	   477	 606   asound  1079  1135  1324  717   2932  14856	  19002    19755    18950  softirqs	      latency_stats  dynamic_debug
+58	     44  30  16   232	   483	 541   919     1085  1136  1444  2140  3599  15369	  19035    uptime   18833  slabinfo	      kpageflags     driver
+57	     43  3   158  mdstat   491	 307   933     1089  1138  1451  1164  4138  16872	  19083    7210     18787  scsi		      kpagecount     dma
+[Parent]: Child 20131 finished with status code 0. Onward!
+Selection #5: /usr [SUCCESS]
+Current reported directory: /usr
+[Parent]: I am waiting for PID 20132 to finish.
+[Child, PID: 20132]: Executing 'ls -tr' command...
+local  lib64  games  libexec  lib32  libx32  src  sbin	include  lib  share  bin
+[Parent]: Child 20132 finished with status code 0. Onward!
+[?2004h]0;student@csvm-ay2024-2025-v3: ~/Operating Systems/Project 01/Project-01[01;32mstudent@csvm-ay2024-2025-v3[00m:[01;34m~/Operating Systems/Project 01/Project-01[00m$ ./slug 1
+[?2004lWaiting for: 6
+Coin Flip: 0
+student  tty7         0.0.0.0          Mon Jan 27 17:50    gone - no logout
+runlevel (to lvl 5)   0.0.0.0          Mon Jan 27 17:50   still running
+reboot   system boot  0.0.0.0          Mon Jan 27 17:50   still running
+student  tty7         0.0.0.0          Wed Jan 22 12:16 - crash (5+05:33)
+runlevel (to lvl 5)   0.0.0.0          Wed Jan 22 12:09 - 17:50 (5+05:41)
+reboot   system boot  0.0.0.0          Wed Jan 22 12:09   still running
+student  tty7         0.0.0.0          Thu Jan 16 19:29 - crash (5+16:40)
+runlevel (to lvl 5)   0.0.0.0          Thu Jan 16 19:26 - 12:09 (5+16:42)
+reboot   system boot  0.0.0.0          Thu Jan 16 19:26   still running
+shutdown system down  0.0.0.0          Wed Jan 15 17:38 - 19:26 (1+01:48)
+student  tty7         0.0.0.0          Wed Jan 15 15:11 - 17:38  (02:26)
+runlevel (to lvl 5)   0.0.0.0          Wed Jan 15 15:11 - 17:38  (02:26)
+reboot   system boot  0.0.0.0          Wed Jan 15 15:10 - 17:38  (02:27)
 
-Script done on 2025-01-24 20:47:30-05:00 [COMMAND_EXIT_CODE="9"]
+wtmp begins Wed Jan 15 15:10:55 2025
+[?2004h]0;student@csvm-ay2024-2025-v3: ~/Operating Systems/Project 01/Project-01[01;32mstudent@csvm-ay2024-2025-v3[00m:[01;34m~/Operating Systems/Project 01/Project-01[00m$ ./slugrace
+[?2004lRead seed value (converted to integer): 12345
+Waiting for: 6
+Racing Slugs: Slug 1 Slug 2 Slug 3 Slug 4 
+Waiting for: 4
+Waiting for: 6
+Waiting for: 3
+Racing Slugs: Slug 1 Slug 2 Slug 3 Slug 4 
+Racing Slugs: Slug 1 Slug 2 Slug 3 Slug 4 
+Racing Slugs: Slug 1 Slug 2 Slug 3 Slug 4 
+Racing Slugs: Slug 1 Slug 2 Slug 3 Slug 4 
+Racing Slugs: Slug 1 Slug 2 Slug 3 Slug 4 
+Racing Slugs: Slug 1 Slug 2 Slug 3 Slug 4 
+Racing Slugs: Slug 1 Slug 2 Slug 3 Slug 4 
+Racing Slugs: Slug 1 Slug 2 Slug 3 Slug 4 
+Racing Slugs: Slug 1 Slug 2 Slug 3 Slug 4 
+Coin Flip: 0
+student  tty7         0.0.0.0          Mon Jan 27 17:50    gone - no logout
+runlevel (to lvl 5)   0.0.0.0          Mon Jan 27 17:50   still running
+reboot   system boot  0.0.0.0          Mon Jan 27 17:50   still running
+student  tty7         0.0.0.0          Wed Jan 22 12:16 - crash (5+05:33)
+runlevel (to lvl 5)   0.0.0.0          Wed Jan 22 12:09 - 17:50 (5+05:41)
+reboot   system boot  0.0.0.0          Wed Jan 22 12:09   still running
+student  tty7         0.0.0.0          Thu Jan 16 19:29 - crash (5+16:40)
+runlevel (to lvl 5)   0.0.0.0          Thu Jan 16 19:26 - 12:09 (5+16:42)
+reboot   system boot  0.0.0.0          Thu Jan 16 19:26   still running
+shutdown system down  0.0.0.0          Wed Jan 15 17:38 - 19:26 (1+01:48)
+student  tty7         0.0.0.0          Wed Jan 15 15:11 - 17:38  (02:26)
+runlevel (to lvl 5)   0.0.0.0          Wed Jan 15 15:11 - 17:38  (02:26)
+reboot   system boot  0.0.0.0          Wed Jan 15 15:10 - 17:38  (02:27)
+
+wtmp begins Wed Jan 15 15:10:55 2025
+Slug 4 finished! Time elapsed: 3 seconds and 309 milliseconds.
+Racing Slugs: Slug 1 Slug 2 Slug 3 
+Racing Slugs: Slug 1 Slug 2 Slug 3 
+Racing Slugs: Slug 1 Slug 2 Slug 3 
+Coin Flip: 0
+student  tty7         0.0.0.0          Mon Jan 27 17:50    gone - no logout
+runlevel (to lvl 5)   0.0.0.0          Mon Jan 27 17:50   still running
+reboot   system boot  0.0.0.0          Mon Jan 27 17:50   still running
+student  tty7         0.0.0.0          Wed Jan 22 12:16 - crash (5+05:33)
+runlevel (to lvl 5)   0.0.0.0          Wed Jan 22 12:09 - 17:50 (5+05:41)
+reboot   system boot  0.0.0.0          Wed Jan 22 12:09   still running
+student  tty7         0.0.0.0          Thu Jan 16 19:29 - crash (5+16:40)
+runlevel (to lvl 5)   0.0.0.0          Thu Jan 16 19:26 - 12:09 (5+16:42)
+reboot   system boot  0.0.0.0          Thu Jan 16 19:26   still running
+shutdown system down  0.0.0.0          Wed Jan 15 17:38 - 19:26 (1+01:48)
+student  tty7         0.0.0.0          Wed Jan 15 15:11 - 17:38  (02:26)
+runlevel (to lvl 5)   0.0.0.0          Wed Jan 15 15:11 - 17:38  (02:26)
+reboot   system boot  0.0.0.0          Wed Jan 15 15:10 - 17:38  (02:27)
+
+wtmp begins Wed Jan 15 15:10:55 2025
+Slug 2 finished! Time elapsed: 4 seconds and 300 milliseconds.
+Racing Slugs: Slug 1 Slug 3 
+Racing Slugs: Slug 1 Slug 3 
+Racing Slugs: Slug 1 Slug 3 
+Racing Slugs: Slug 1 Slug 3 
+Racing Slugs: Slug 1 Slug 3 
+Racing Slugs: Slug 1 Slug 3 
+Coin Flip: 0
+Coin Flip: 0
+student  tty7         0.0.0.0          Mon Jan 27 17:50    gone - no logout
+runlevel (to lvl 5)   0.0.0.0          Mon Jan 27 17:50   still running
+reboot   system boot  0.0.0.0          Mon Jan 27 17:50   still running
+student  tty7         0.0.0.0          Wed Jan 22 12:16 - crash (5+05:33)
+runlevel (to lvl 5)   0.0.0.0          Wed Jan 22 12:09 - 17:50 (5+05:41)
+reboot   system boot  0.0.0.0          Wed Jan 22 12:09   still running
+student  tty7         0.0.0.0          Thu Jan 16 19:29 - crash (5+16:40)
+runlevel (to lvl 5)   0.0.0.0          Thu Jan 16 19:26 - 12:09 (5+16:42)
+reboot   system boot  0.0.0.0          Thu Jan 16 19:26   still running
+shutdown system down  0.0.0.0          Wed Jan 15 17:38 - 19:26 (1+01:48)
+student  tty7         0.0.0.0          Wed Jan 15 15:11 - 17:38  (02:26)
+runlevel (to lvl 5)   0.0.0.0          Wed Jan 15 15:11 - 17:38  (02:26)
+reboot   system boot  0.0.0.0          Wed Jan 15 15:10 - 17:38  (02:27)
+
+wtmp begins Wed Jan 15 15:10:55 2025
+student  tty7         0.0.0.0          Mon Jan 27 17:50    gone - no logout
+runlevel (to lvl 5)   0.0.0.0          Mon Jan 27 17:50   still running
+reboot   system boot  0.0.0.0          Mon Jan 27 17:50   still running
+student  tty7         0.0.0.0          Wed Jan 22 12:16 - crash (5+05:33)
+runlevel (to lvl 5)   0.0.0.0          Wed Jan 22 12:09 - 17:50 (5+05:41)
+reboot   system boot  0.0.0.0          Wed Jan 22 12:09   still running
+student  tty7         0.0.0.0          Thu Jan 16 19:29 - crash (5+16:40)
+runlevel (to lvl 5)   0.0.0.0          Thu Jan 16 19:26 - 12:09 (5+16:42)
+reboot   system boot  0.0.0.0          Thu Jan 16 19:26   still running
+shutdown system down  0.0.0.0          Wed Jan 15 17:38 - 19:26 (1+01:48)
+student  tty7         0.0.0.0          Wed Jan 15 15:11 - 17:38  (02:26)
+runlevel (to lvl 5)   0.0.0.0          Wed Jan 15 15:11 - 17:38  (02:26)
+reboot   system boot  0.0.0.0          Wed Jan 15 15:10 - 17:38  (02:27)
+
+wtmp begins Wed Jan 15 15:10:55 2025
+Slug 1 finished! Time elapsed: 6 seconds and 283 milliseconds.
+Slug 3 finished! Time elapsed: 6 seconds and 283 milliseconds.
+The Race Finished! It last 6 seconds and 283 miliseconds!
+[?2004h]0;student@csvm-ay2024-2025-v3: ~/Operating Systems/Project 01/Project-01[01;32mstudent@csvm-ay2024-2025-v3[00m:[01;34m~/Operating Systems/Project 01/Project-01[00m$ exit
+[?2004lexit
+
+Script done on 2025-01-28 20:25:39-05:00 [COMMAND_EXIT_CODE="0"]

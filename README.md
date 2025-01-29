@@ -1,16 +1,21 @@
 # Project-01
 # FINAL CHECKPOINT 1 PUSH COMPLETED ON 1/24/2025
+# FINAL PUSH ON 1/28/2025
 # AUTHORS: NATHANIEL POWERS & CALEB WARZOCHA
 #
 #
 # Compilation guide: 
-# "make all" - compiles the both sections including prolific.c & generation.c
+# "make all" - compiles the all sections including prolific.c, generation.c, explorer.c, slug.c, & slugrace.c
 #
 # "make prolific" - compiles the first section including prolific.c
 #
 # "make generation" - compliles the second section including generation.
 #
 # "make explorer" - compiles the third section including explorer.c
+#
+# "make slug" - compiles the fourth section including slug.c
+#
+# "make slugrace" - compiles the fith section including slugrace.c
 #
 # "make clean" - force-removes all section files from directory
 #
